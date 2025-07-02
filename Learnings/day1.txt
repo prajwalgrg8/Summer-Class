@@ -1,0 +1,10 @@
+Short description on Laravel
+Installed Composer
+Verify composer by typing composer in terminal to check if composer is installed or not
+Using composer installed laravel 
+Created a laravel Project
+Learned about github push and commit
+Created Repository on github
+
+
+

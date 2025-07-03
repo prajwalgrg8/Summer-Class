@@ -2,9 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 
-Route::get('home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('', [AboutController::class, 'index']);
+Route::get('about-us', [HomeController::class, 'about'])->name('aboutUs');
+
+Route::get('service', [HomeController::class, 'services'])->name('service');
+
+Route::get('contact', [HomeController::class, 'contacts'])->name('contacts');
+
+Route::get('logIn', [HomeController::class, 'login'])->name('login');
+
+
 

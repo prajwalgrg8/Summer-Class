@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto"> <!-- ms-auto to push items to right -->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{  route('home') }}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{  route('aboutUs') }}">About</a>
@@ -34,7 +34,7 @@
           <a class="nav-link" href="{{  route('contacts') }}">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-light ms-2" href="{{  route('login') }}">Login</a>
+          <a class="nav-link btn btn-outline-light ms-2" href="#">Login</a>
         </li>
       </ul>
     </div>
@@ -45,6 +45,6 @@
 <!-- Bootstrap JS CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<p>This is a Home page</p>
+<p>This is a Login page</p>
 </body>
 </html>

@@ -8,33 +8,33 @@ class HomeController extends Controller
 {
     public function index()
     {
-        
-        return view('index');
+        $title = 'Home';
+        return view(('index'), compact('title'));
     }
 
 
     public function about()
     {
-        
-        return view('about');
+        $title = 'About Us';
+        return view(('about'), compact('title'));
     }
 
     public function services()
     {
-        
-        return view('service');
+        $title = 'Services';
+        return view(('service'), compact('title'));
     }
 
     public function contacts()
     {
-        
-        return view('contact');
+        $title = 'Contacts';
+        return view(('contact'), compact('title'));
     }
 
     public function login()
     {
-        
-        return view('login');
+        $title = 'Log';
+        return view(('login'), compact('title'));
     }
 
     

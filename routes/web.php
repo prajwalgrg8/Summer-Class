@@ -13,7 +13,6 @@ Route::get('service', [HomeController::class, 'services'])->name('service');
 
 Route::get('contact', [HomeController::class, 'contacts'])->name('contacts');
 
-Route::get('logIn', [HomeController::class, 'login'])->name('login');
 
 
 

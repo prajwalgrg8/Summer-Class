@@ -1,50 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $title }}</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+@extends('master')
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">MySite</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+@section('content')
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> <!-- ms-auto to push items to right -->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{  url('/') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{  route('aboutUs') }}">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{  url('service') }}">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-outline-light ms-2" href="{{  url('logIn') }}">Login</a>
-        </li>
-      </ul>
+<!-- Hero Section -->
+  <section class="bg-blue-600 text-white py-20">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h1 class="text-4xl font-bold mb-4">Welcome to Contact Page</h1>
+      <p class="text-lg mb-6">We help businesses grow online with modern solutions and beautiful designs.</p>
+      <a href="#" class="bg-white text-blue-600 px-6 py-2 rounded hover:bg-gray-100 transition">Get Started</a>
     </div>
-  </div>
-</nav>
-<!-- Navbar End -->
+  </section>
 
-<!-- Bootstrap JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-10">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+          <p class="text-gray-600">Modern and responsive web design services tailored to your business.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-2">Development</h3>
+          <p class="text-gray-600">We build fast, scalable, and secure websites and applications.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-2">Digital Marketing</h3>
+          <p class="text-gray-600">Reach your audience through SEO, social media, and content strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>This is a Contact page</p>
-</body>
-</html>
+@endsection

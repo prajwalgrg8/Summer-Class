@@ -37,6 +37,16 @@ class HomeController extends Controller
         return view(('login'), compact('title'));
     }
 
+    public function indexes()
+    {
+        return view('indexess');
+    }
+
+    
+
+
+
+    
     
 }
 

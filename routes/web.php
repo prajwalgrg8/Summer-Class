@@ -1,18 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\DashboardController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('about-us', [HomeController::class, 'about'])->name('aboutUs');
+Route::get('movies', [DashboardController::class, 'movies'])->name('movie');
 
-Route::get('service', [HomeController::class, 'services'])->name('service');
+Route::get('genres', [DashboardController::class, 'genres'])->name('genre');
 
-Route::get('contact', [HomeController::class, 'contacts'])->name('contacts');
+Route::get('users', [DashboardController::class, 'users'])->name('user');
 
+Route::get('reviews', [DashboardController::class, 'reviews'])->name('review');
 
+Route::get('reports', [DashboardController::class, 'reports'])->name('report');
 
 

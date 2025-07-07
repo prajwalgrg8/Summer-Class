@@ -42,4 +42,6 @@ class DashboardController extends Controller
     {
         return view('admin.reports');
     }
+
+    $movies = Movie::latest()->take(5) -> get(['id', 'name']);
 }

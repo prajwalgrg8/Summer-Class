@@ -3,15 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Movie;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $statistics=[
+            'totaluser'=> User::count(),
+            'totalmovies'=>Movie::count(),
+            'totalgenre'=>Genre::count(),
+            'totalmoviewatched'=>1,
+        ];
+        $movies = Movie::latest()->get(); //select * from movies order by id desc
+        return view('admin.dashboard', compact('statistics','movies'));
     }
-
 
     public function dashboard()
     {
@@ -43,5 +52,5 @@ class DashboardController extends Controller
         return view('admin.reports');
     }
 
-    $movies = Movie::latest()->take(5) -> get(['id', 'name']);
+   
 }

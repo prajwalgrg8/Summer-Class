@@ -14,48 +14,39 @@
     <table class="table table-striped table-bordered align-middle">
       <thead class="table-dark">
         <tr>
-          <th>Poster</th>
-          <th>Title</th>
+          <th>#</th>
+          <th>Name</th>
+          <th>Description</th>
           <th>Genre</th>
-          <th>Release Year</th>
+          <th>Release Date</th>
           <th>Rating</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
+        @foreach ($movies as $movie )
         <tr>
-          <td><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRipfEoI8fb4qxidki3e_kp3fr_Kopvoi2yCKcpJGf2ngnKweMR" alt="poster" class="img-thumbnail"></td>
-          <td>The Shawshank Redemption</td>
-          <td>Drama</td>
-          <td>1994</td>
-          <td>9.3 ★</td>
+          <td>{{$loop -> index + 1}}</td>
+          <td>{{$movie -> name}}</td>
+          <td>{{$movie -> description}}</td>
+          <td>{{$movie -> genre_id}}</td>
+          <td>{{$movie -> release_date}}</td>
+          <td>{{$movie -> rating}}</td>
           <td>
-            <button class="btn btn-sm btn-warning">Edit</button>
-            <button class="btn btn-sm btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQovCe0H45fWwAtV31ajOdXRPTxSsMQgPIQ3lcZX_mAW0jXV3kH" alt="poster" class="img-thumbnail"></td>
-          <td>Inception</td>
-          <td>Sci-Fi</td>
-          <td>2010</td>
-          <td>8.8 ★</td>
-          <td>
-            <button class="btn btn-sm btn-warning">Edit</button>
-            <button class="btn btn-sm btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="https://wallpapercat.com/furious-7-wallpapers" alt="poster" class="img-thumbnail"></td>
-          <td>Fast and Furious 7</td>
-          <td>Action</td>
-          <td>2015</td>
-          <td>8.6 ★</td>
-          <td>
-            <button class="btn btn-sm btn-warning">Edit</button>
-            <button class="btn btn-sm btn-danger">Delete</button>
-          </td>
-        </tr>
+            <button class="btn btn-sm btn-warning" title='Edit'> <i class="bi bi-pencil-square"></i></button>
+
+            <form action="{{ route('admin.movie.delete', $movie->id) }}" method="POST" style="display: inline;"
+                        onsubmit="return confirm('Are you sure you want to delete this movie?')">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger" title="Delete">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+
+          </a>
+          </td>   
+          @endforeach
       </tbody>
     </table>
   </div>

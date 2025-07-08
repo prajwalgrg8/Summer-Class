@@ -8,7 +8,7 @@
       <div class="card text-white bg-primary mb-3">
         <div class="card-body">
           <h5 class="card-title">Total Movies</h5>
-          <p class="card-text">30</p>
+          <p class="card-text">{{ $statistics['totalmovies'] }}</p>
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div class="card text-white bg-success mb-3">
         <div class="card-body">
           <h5 class="card-title">Total Users</h5>
-          <p class="card-text">5</p>
+          <p class="card-text">{{ $statistics['totaluser'] }}</p>
         </div>
       </div>
     </div>

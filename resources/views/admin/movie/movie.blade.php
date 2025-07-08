@@ -3,7 +3,8 @@
 @section('content')
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Manage Movies</h2>
-    <button class="btn btn-primary">+ Add New Movie</button>
+    <a href="{{ route('admin.movie.create') }}" class="btn btn-primary">+ Add New Movie</a>
+
   </div>
 
   <div class="mb-3">
@@ -18,6 +19,7 @@
           <th>Name</th>
           <th>Description</th>
           <th>Genre</th>
+          <th>Duration</th>
           <th>Release Date</th>
           <th>Rating</th>
           <th>Action</th>
@@ -30,6 +32,7 @@
           <td>{{$movie -> name}}</td>
           <td>{{$movie -> description}}</td>
           <td>{{$movie -> genre_id}}</td>
+          <td>{{$movie -> duration}}</td>
           <td>{{$movie -> release_date}}</td>
           <td>{{$movie -> rating}}</td>
           <td>

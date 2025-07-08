@@ -27,11 +27,12 @@
 
 <h3>Existing Genres</h3>
 <div class="row">
+  @foreach ($genres as $genre)
   <div class="col-md-3 mb-3">
     <div class="card text-white bg-dark h-100">
       <div class="card-body text-center">
-        <h5 class="card-title">Action</h5>
-        <p class="card-text">Fast-paced, high-stakes, adrenaline-filled.</p>
+        <h5 class="card-title">{{ $genre -> name}}</h5>
+        <p class="card-text">{{ $genre -> description}}</p>
       </div>
       <div class="card-footer text-center">
         <button class="btn btn-sm btn-warning">Edit</button>
@@ -39,8 +40,9 @@
       </div>
     </div>
   </div>
+   @endforeach
 
-  <div class="col-md-3 mb-3">
+  <!--<div class="col-md-3 mb-3">
     <div class="card text-white bg-success h-100">
       <div class="card-body text-center">
         <h5 class="card-title">Comedy</h5>
@@ -51,7 +53,7 @@
         <button class="btn btn-sm btn-danger">Delete</button>
       </div>
     </div>
-  </div>
+  </div>-->
 
   {{-- More genres can be added dynamically --}}
 </div>

@@ -15,13 +15,20 @@ class GenreSeeder extends Seeder
     {
         Genre::create([
             'name' => 'Action',
-            'description' => 'Action'
+            'description' => 'Fast-paced, high-stakes, adrenaline-filled.'
         ]);
 
         Genre::create([
             'name' => 'Comedy',
-            'description' => 'Comdey'
+            'description' => 'Light-hearted, humorous, and entertaining.'
         ]);
+
+        Genre::create([
+            'name' => 'Sci-Fi',
+            'description' => 'Futuristic, technology-driven narratives.'
+        ]);
+
+        
 
 
     }

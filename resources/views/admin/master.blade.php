@@ -1,13 +1,13 @@
-@include('admin.header')
+@include('admin.header.header')
 
 <div class="wrapper">
-  @include('admin.nav')
+  @include('admin.nav.nav')
 
   <div class="content-wrapper">
     <div class="content">
       @yield('content')
     </div>
 
-    @include('admin.footer')
+    @include('admin.footer.footer')
   </div>
 </div>

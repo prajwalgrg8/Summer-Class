@@ -19,38 +19,12 @@ class DashboardController extends Controller
             'totalmoviewatched'=>1,
         ];
         $movies = Movie::latest()->get(); //select * from movies order by id desc
-        return view('admin.dashboard', compact('statistics','movies'));
+        return view('admin.dashboard.dashboard', compact('statistics','movies'));
     }
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard.dashboard');
     }
-
-    public function movies()
-    {
-        return view('admin.movie');
-    }
-
-    public function genres()
-    {
-        return view('admin.genre');
-    }
-
-    public function users()
-    {
-        return view('admin.user');
-    }
-
-    public function reviews()
-    {
-        return view('admin.reviews');
-    }
-
-    public function reports()
-    {
-        return view('admin.reports');
-    }
-
    
 }

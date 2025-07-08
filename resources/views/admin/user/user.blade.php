@@ -13,33 +13,24 @@
         <th>Name</th>
         <th>Email</th>
         <th>Registered On</th>
-        <th>Status</th>
+        <!--<th>Status</th>-->
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
+      @foreach ($users as $user )
       <tr>
-        <td>101</td>
-        <td>John Doe</td>
-        <td>john@example.com</td>
-        <td>2025-05-01</td>
-        <td><span class="badge bg-success">Active</span></td>
+        <td>{{ $user-> id }}</td>
+        <td>{{ $user-> name }}</td>
+        <td>{{ $user-> email }}</td>
+        <td>2025-05-1</td>
+        <!--<td><span class="badge bg-success">Active</span></td>-->
         <td>
           <button class="btn btn-sm btn-warning">Ban</button>
           <button class="btn btn-sm btn-danger">Delete</button>
         </td>
       </tr>
-      <tr>
-        <td>102</td>
-        <td>Emma Watson</td>
-        <td>emma@example.com</td>
-        <td>2025-05-15</td>
-        <td><span class="badge bg-secondary">Banned</span></td>
-        <td>
-          <button class="btn btn-sm btn-success">Unban</button>
-          <button class="btn btn-sm btn-danger">Delete</button>
-        </td>
-      </tr>
+       @endforeach
     </tbody>
   </table>
 </div>

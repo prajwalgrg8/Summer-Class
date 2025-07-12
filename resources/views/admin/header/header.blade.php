@@ -69,10 +69,8 @@
     font-size: 1.5rem;
   }
 
-  .img-thumbnail {
-    max-height: 75px;
-  }
   </style>
+  @stack('css')
 
 </head>
 <body>

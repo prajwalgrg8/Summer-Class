@@ -3,7 +3,10 @@
 @section('title', 'Manage Users')
 
 @section('content')
-<h2 class="mb-4">Users Management</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Users Management</h2>
+  <a href="{{ route('admin.user.create') }}" class="btn btn-primary">+ Add New User</a>
+</div>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered align-middle">

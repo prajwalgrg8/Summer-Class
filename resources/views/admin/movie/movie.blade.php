@@ -1,5 +1,14 @@
 @extends('admin.master')
 
+@push('css')
+<style>
+    img {
+        width: auto;
+        height: 5rem;
+    }
+</style>
+@endpush
+
 @section('content')
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Manage Movies</h2>
@@ -16,6 +25,7 @@
       <thead class="table-dark">
         <tr>
           <th>#</th>
+          <th>Image</th>
           <th>Name</th>
           <th>Description</th>
           <th>Genre</th>
@@ -29,6 +39,7 @@
         @foreach ($movies as $movie )
         <tr>
           <td>{{$loop -> index + 1}}</td>
+          <td><a href="{{ asset($movie->image) }}" target="_blank"> <img src="{{ asset($movie->image) }}"></a></td>
           <td>{{$movie -> name}}</td>
           <td>{{$movie -> description}}</td>
           <td>{{$movie -> genre_id}}</td>
@@ -36,7 +47,7 @@
           <td>{{$movie -> release_date}}</td>
           <td>{{$movie -> rating}}</td>
           <td>
-            <button class="btn btn-sm btn-warning" title='Edit'> <i class="bi bi-pencil-square"></i></button>
+            <a href="{{ route('admin.movie.edit',$movie->id) }}" class="btn btn-sm btn-warning" title='Edit'> <i class="bi bi-pencil-square"></i></a>
 
             <form action="{{ route('admin.movie.delete', $movie->id) }}" method="POST" style="display: inline;"
                         onsubmit="return confirm('Are you sure you want to delete this movie?')">

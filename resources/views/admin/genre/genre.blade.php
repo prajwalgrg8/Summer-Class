@@ -3,58 +3,34 @@
 @section('title', 'Manage Genres')
 
 @section('content')
-<div class="mb-4">
-  <h2 class="mb-3">Add New Genre</h2>
-  <form action="{{ url('/admin/genres') }}" method="POST">
-    @csrf
-    <div class="row g-3">
-      <div class="col-md-4">
-        <label for="name" class="form-label">Genre Name</label>
-        <input type="text" id="name" name="name" class="form-control" placeholder="e.g., Thriller" required>
-      </div>
-      <div class="col-md-6">
-        <label for="description" class="form-label">Description</label>
-        <input type="text" id="description" name="description" class="form-control" placeholder="Short genre description" required>
-      </div>
-      <div class="col-md-2 d-flex align-items-end">
-        <button type="submit" class="btn btn-success w-100">Add Genre</button>
-      </div>
-    </div>
-  </form>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Genres</h2>
+  <a href="{{ route('admin.genre.create') }}" class="btn btn-primary">+ Add Genre</a>
 </div>
 
-<hr class="my-4">
-
-<h3>Existing Genres</h3>
+{{-- Genre Cards --}}
 <div class="row">
   @foreach ($genres as $genre)
   <div class="col-md-3 mb-3">
     <div class="card text-white bg-dark h-100">
       <div class="card-body text-center">
-        <h5 class="card-title">{{ $genre -> name}}</h5>
-        <p class="card-text">{{ $genre -> description}}</p>
+        <h5 class="card-title">{{ $genre->name }}</h5>
+        <p class="card-text">{{ $genre->description }}</p>
       </div>
       <div class="card-footer text-center">
-        <button class="btn btn-sm btn-warning">Edit</button>
-        <button class="btn btn-sm btn-danger">Delete</button>
+        <a href="#" class="btn btn-sm btn-warning" title="Edit">
+          <i class="bi bi-pencil-square"></i>
+        </a>
+        <form action="{{ route('admin.genre.delete', $genre->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this genre?')">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-sm btn-danger" title="Delete">
+            <i class="bi bi-trash"></i>
+          </button>
+        </form>
       </div>
     </div>
   </div>
-   @endforeach
-
-  <!--<div class="col-md-3 mb-3">
-    <div class="card text-white bg-success h-100">
-      <div class="card-body text-center">
-        <h5 class="card-title">Comedy</h5>
-        <p class="card-text">Light-hearted and humorous.</p>
-      </div>
-      <div class="card-footer text-center">
-        <button class="btn btn-sm btn-warning">Edit</button>
-        <button class="btn btn-sm btn-danger">Delete</button>
-      </div>
-    </div>
-  </div>-->
-
-  {{-- More genres can be added dynamically --}}
+  @endforeach
 </div>
 @endsection

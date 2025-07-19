@@ -20,11 +20,11 @@
      class="{{ Route::is('admin.user.index') ? 'active' : '' }}">
      Users
   </a>
-
+<!--
   <a href="{{ route('admin.review.index') }}" 
      class="{{ Route::is('admin.review.index') ? 'active' : '' }}">
      Ratings & Reviews
-  </a>
+  </a>-->
 
   <a href="#">Logout</a>
 </div>

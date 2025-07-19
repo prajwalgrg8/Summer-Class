@@ -18,7 +18,7 @@
         <p class="card-text">{{ $genre->description }}</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-sm btn-warning" title="Edit">
+        <a href="{{ route('admin.genre.edit', $genre->id) }}" class="btn btn-sm btn-warning" title="Edit">
           <i class="bi bi-pencil-square"></i>
         </a>
         <form action="{{ route('admin.genre.delete', $genre->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this genre?')">

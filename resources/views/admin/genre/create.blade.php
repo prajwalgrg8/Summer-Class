@@ -13,12 +13,12 @@
   <div class="row g-3">
     <div class="col-md-6">
       <label for="name" class="form-label">Genre Name</label>
-      <input type="text" name="name" id="name" class="form-control" placeholder="e.g., Mystery, Fantasy" required>
+      <input type="text" name="name" id="name" class="form-control" placeholder="e.g., Mystery, Fantasy" value = "{{ old('name') }}" required>
     </div>
 
     <div class="col-md-6">
       <label for="description" class="form-label">Description</label>
-      <input type="text" name="description" id="description" class="form-control" placeholder="Short description (optional)">
+      <input type="text" name="description" id="description" class="form-control" placeholder="Short description (optional)" value = "{{ old('description') }}">
     </div>
 
     <div class="col-12 mt-3">

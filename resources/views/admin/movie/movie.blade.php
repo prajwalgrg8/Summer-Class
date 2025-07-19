@@ -16,11 +16,28 @@
 
   </div>
 
+  <!--Search form-->
   <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Search movies by title, director, genre...">
-  </div>
+    <form action="{{ route('admin.movie.index') }}" method="GET">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search Movie here"
+                value="{{ request()->search }}">
 
-  <div class="table-responsive">
+            <select name="genre_id" class="form-select" style="max-width: 200px;">
+                <option value="">Select Genre</option>
+                @foreach($genres as $genre)
+                <option value="{{ $genre->id }}" @if($genre->id == request()->genre_id) selected @endif>
+                    {{ $genre->name }}
+                </option>
+                @endforeach
+            </select>
+
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+<div class="table-responsive">
     <table class="table table-striped table-bordered align-middle">
       <thead class="table-dark">
         <tr>
@@ -42,7 +59,7 @@
           <td><a href="{{ asset($movie->image) }}" target="_blank"> <img src="{{ asset($movie->image) }}"></a></td>
           <td>{{$movie -> name}}</td>
           <td>{{$movie -> description}}</td>
-          <td>{{$movie -> genre_id}}</td>
+          <td>{{ $movie->genre->name ?? 'N/A' }}</td>
           <td>{{$movie -> duration}}</td>
           <td>{{$movie -> release_date}}</td>
           <td>{{$movie -> rating}}</td>
@@ -57,8 +74,6 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </form>
-
-          </a>
           </td>   
           @endforeach
       </tbody>

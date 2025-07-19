@@ -12,8 +12,9 @@ class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::latest()->get(); //select * from movies order by id desc
-        return view('admin.movie.movie', compact('movies'));
+        $movies = Movie::filterSearch()->filterGenreId()->latest()->get(); //select * from movies order by id desc
+         $genres = Genre::orderBy('name', 'ASC')->get();
+        return view('admin.movie.movie', compact('movies', 'genres'));
     }
 
     public function create()
